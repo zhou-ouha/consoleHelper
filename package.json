@@ -1,0 +1,147 @@
+{
+  "name": "console-helper",
+  "displayName": "consoleHelper",
+  "description": "quick and custom log",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": " Console Log Configuration",
+      "properties": {
+        "log-utils.quote": {
+          "type": "string",
+          "enum": [
+            "'",
+            "\""
+          ],
+          "default": "\"",
+          "description": "Double quotes (\"\"), single quotes ('')"
+        },
+        "log-utils.showText": {
+          "type": "boolean",
+          "default": true,
+          "description": "Insert console with text"
+        },
+        "log-utils.showLineNumber": {
+          "type": "boolean",
+          "default": true,
+          "description": "Insert line number"
+        },
+        "log-utils.icons": {
+          "type": "array",
+          "default": [
+            "👻",
+            "🎉",
+            "💡",
+            "🎯",
+            "📒",
+            "✏️",
+            "📌",
+            "📍",
+            "🚀",
+            "⚓",
+            "🌈",
+            "💞",
+            "💥",
+            "❓",
+            "❗",
+            "⏩",
+            "🕕"
+          ],
+          "description": "The prefix of the log icon."
+        },
+        "log-utils.fontColors": {
+          "type": "array",
+          "default": [
+            "#42b983",
+            "#33a5ff",
+            "#b03734",
+            "#2eafb0",
+            "#6ec1c2",
+            "#ed9ec7",
+            "#fca650",
+            "#3f7cff",
+            "#93c0a4",
+            "#ea7e5c",
+            "#f5ce50",
+            "#465975",
+            "#ffdd4d",
+            "#7f2b82",
+            "#4fff4B",
+            "#e41a6a"
+          ],
+          "description": "The prefix of the log font color."
+        },
+        "log-utils.backgroundColors": {
+          "type": "array",
+          "default": [],
+          "description": "The prefix of the log background color."
+        },
+        "log-utils.fontSize": {
+          "type": "number",
+          "default": 14,
+          "description": "The font size of the log."
+        },
+        "log-utils.logType": {
+          "type": "string",
+          "enum": [
+            "log",
+            "warn",
+            "error",
+            "debug",
+            "table",
+            "info"
+          ],
+          "default": "log",
+          "description": "Select the log type"
+        },
+        "log-utils.semicolon": {
+          "type": "boolean",
+          "default": false,
+          "description": "Insert Semicolon at the end"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "consoleHelper.getTime",
+        "title": "get Time"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "consoleHelper.getTime",
+        "key": "shift+ctrl+r",
+        "mac": "shift+cmd+r",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.89.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
