@@ -3,6 +3,7 @@
   "displayName": "consoleHelper",
   "description": "quick and custom log",
   "version": "0.0.1",
+  "repository": "https://github.com/zhou-ouha/consoleHelper.git",
   "engines": {
     "vscode": "^1.89.0"
   },
@@ -114,6 +115,10 @@
       {
         "command": "consoleHelper.getTime",
         "title": "get Time"
+      },
+      {
+        "command": "consoleHelper.deleteAllLogStatements",
+        "title": "Delete all console statements"
       }
     ],
     "keybindings": [
@@ -122,6 +127,11 @@
         "key": "shift+ctrl+r",
         "mac": "shift+cmd+r",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "consoleHelper.deleteAllLogStatements",
+        "key": "shift+ctrl+3",
+        "mac": "shift+cmd+3"
       }
     ]
   },
